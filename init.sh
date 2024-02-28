@@ -29,7 +29,7 @@ cp ~/vpn-setup/files/vars ./vars
 ./easyrsa gen-req server nopass
 ./easyrsa build-ca
 ./easyrsa sign-req server server
-cp pki/ca.crt pki/issued/server.crt /etc/openvpn/server
+cp pki/ca.crt pki/issued/server.crt pki/private/server.key /etc/openvpn/server
 
 openvpn --genkey --secret ta.key
 cp ta.key /etc/openvpn/server
@@ -54,7 +54,6 @@ ufw enable
 
 ### Start OpenVPN
 systemctl -f enable openvpn-server@server.service
-sleep 3
 systemctl start openvpn-server@server.service
 
 # Client config generator
