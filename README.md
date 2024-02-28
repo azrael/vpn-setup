@@ -123,4 +123,5 @@ cd ~/client-configs
 Конфиг тут `~/client-configs/files/client1.ovpn`.
 
 ### Источники
-[Установка и настройка сервера OpenVPN](https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-ubuntu-20-04-ru)
+- [Установка и настройка сервера OpenVPN](https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-ubuntu-20-04-ru)
+- [OpenVPN How To](https://openvpn.net/community-resources/how-to/)
