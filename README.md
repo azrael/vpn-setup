@@ -3,8 +3,8 @@
 ### Подготовка
 Установка необходимых утилит:
 ```
-sudo apt update
-sudo apt install openvpn easy-rsa ufw
+apt update
+apt install openvpn easy-rsa ufw
 ```
 
 ### Ключи и сертификаты сервера
