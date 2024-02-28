@@ -54,6 +54,7 @@ ufw enable
 
 ### Start OpenVPN
 systemctl -f enable openvpn-server@server.service
+sleep 3
 systemctl start openvpn-server@server.service
 
 # Client config generator
