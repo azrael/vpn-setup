@@ -119,10 +119,10 @@ chmod +x ~/client-configs/make_config.sh
 Генерация конфига:
 ```
 cd ~/client-configs
-./make_config.sh client1
+./make_config.sh <CLIENT_ID>
 ```
 
-Конфиг будет тут `~/client-configs/files/client1.ovpn`.
+Конфиг будет тут `~/client-configs/files/<CLIENT_ID>.ovpn`.
 
 ### Источники
 - [Установка и настройка сервера OpenVPN](https://www.digitalocean.com/community/tutorials/how-to-set-up-and-configure-an-openvpn-server-on-ubuntu-20-04-ru)
