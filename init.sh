@@ -16,7 +16,7 @@ echo "Setting up the OpenVPN server at ${IP}:${PORT}"
 
 # Pre-requisites
 apt update
-apt install openvpn easy-rsa ufw
+apt install -y openvpn easy-rsa ufw
 
 # Server certs and keys
 mkdir ~/easy-rsa
@@ -55,7 +55,6 @@ ufw enable
 ### Start OpenVPN
 systemctl -f enable openvpn-server@server.service
 systemctl start openvpn-server@server.service
-systemctl status openvpn-server@server.service
 
 # Client config generator
 mkdir -p ~/client-configs/files
