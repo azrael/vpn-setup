@@ -31,7 +31,7 @@ cp ~/vpn-setup/files/vars ./vars
 ./easyrsa sign-req server server
 cp pki/ca.crt pki/issued/server.crt pki/private/server.key /etc/openvpn/server
 
-openvpn --genkey --secret ta.key
+openvpn --genkey secret ta.key
 cp ta.key /etc/openvpn/server
 
 # Clients common certs and keys
@@ -62,3 +62,4 @@ cp ~/vpn-setup/files/base.conf ~/client-configs/base.conf
 sed -i -e "s/%IP%/${IP}/g" ~/client-configs/base.conf
 sed -i -e "s/%PORT%/${PORT}/g" ~/client-configs/base.conf
 cp ~/vpn-setup/files/make_config.sh ~/client-configs/make_config.sh
+chmod +x ~/client-configs/make_config.sh

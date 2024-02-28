@@ -4,7 +4,7 @@
 Установка необходимых утилит:
 ```
 apt update
-apt install openvpn easy-rsa ufw
+apt install -y openvpn easy-rsa ufw
 ```
 
 ### Ключи и сертификаты сервера
@@ -25,7 +25,7 @@ nano vars
 ./easyrsa sign-req server server
 cp pki/ca.crt pki/issued/server.crt pki/private/server.key /etc/openvpn/server
 
-openvpn --genkey --secret ta.key
+openvpn --genkey secret ta.key
 cp ta.key /etc/openvpn/server
 ```
 
@@ -37,9 +37,8 @@ mkdir -p ~/client-configs/keys
 cp ta.key pki/ca.crt  ~/client-configs/keys
 
 ./easyrsa gen-req client1 nopass
-cp pki/private/client1.key ~/client-configs/keys/
 ./easyrsa sign-req client client1
-cp pki/issued/client1.crt ~/client-configs/keys
+cp pki/private/client1.key pki/issued/client1.crt ~/client-configs/keys
 ```
 
 ### Конфигурация OpenVPN
