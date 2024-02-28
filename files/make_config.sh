@@ -2,6 +2,14 @@
 
 # Argument 1: Client identifier
 
+if [ -z "$1" ]; then
+    echo "Usage:"
+    echo "$ ./make_config.sh <CLIENT_ID>"
+    exit 1
+fi
+
+echo "Setting up the OpenVPN server at ${IP}:${PORT}"
+
 EASY_RSA_DIR=~/easy-rsa
 KEY_DIR=~/client-configs/keys
 OUTPUT_DIR=~/client-configs/files
@@ -23,3 +31,5 @@ cat ${BASE_CONFIG} \
     ${KEY_DIR}/ta.key \
     <(echo -e '</tls-crypt>') \
     > ${OUTPUT_DIR}/"${1}".ovpn
+
+echo "Config for ${1} is ready at ~/client-configs/files/${1}.ovpn"
