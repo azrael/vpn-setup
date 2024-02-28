@@ -8,7 +8,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-echo "Setting up the OpenVPN server at ${IP}:${PORT}"
+echo "Creating a config for ${1}"
 
 EASY_RSA_DIR=~/easy-rsa
 KEY_DIR=~/client-configs/keys
